@@ -1,0 +1,13 @@
+
+img {
+    width: 100%;
+}
+
+.playing-cards {
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
