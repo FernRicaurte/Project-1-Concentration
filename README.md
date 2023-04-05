@@ -21,7 +21,7 @@ The player will click on a card once to turn it up, then the player will turn a 
 If the cards match, they will remain up showing their match, and the player will continue to another turn.
 If player gets a match, no turn will be taken away from the allotted turns. (There will be a "turns left" button)
 If the player clicks on two cards that when displayed upside up, do not match, then a turn will be taken away, and the cards will be flipped back upside down. (There will be a "turns left" button)
-If player exhausts all his allotted turns, the game will end and the player will get a message "You lost!".
+If player's turns (guesses) will be kept track of, the game will end once the player has won by guessing all the cards, and teh game will restart.
 If the game ends, a "play again" button will appear, reinitializing a brand new game. 
 If the player wins, a message " You won!" will appear, and a "play again" button will appear, reinitializing a brand new game. 
 At the start of every new game, the cards will be shuffled to ensure randomness. 
