@@ -10,7 +10,7 @@ function shuffle(array) {
     }
   
     return array;
-  }
+  };
   
 //my code for the game
 
@@ -31,15 +31,28 @@ let cards = [
 // we can select all of the ten card elements by using .querySelectorAll and storing it in a variable cardEls. The selector is .playingCards which all cards have.
 const cardEls = document.querySelectorAll('.playingcard');
 
+const firstGuess = mull;
+
+
+
 //this will shuffle the cards array, which contains its objects
-shuffle(cards)
+shuffle(cards);
 
 
 //adding an event listener for each of the ten cards in cardEls which is accessed with .querySelectorAll . the event listener is for a click on the cards.
 cardEls.forEach(function(el, index) {
 el.addEventListener('click', function() {
-  const clickedCard = cards[index]
-  el.setAttribute('src', clickedCard.image) // using the setAttribute method so that element being clicked on shows image.
-    console.log(clickedCard);
+  const clickedCard = cards[index];
+  el.setAttribute('src', clickedCard.image) //setAttribute method so facedown element being clicked on shows .image of card from array
+
+  if(firstGuess === null){
+    firstGuess = index
+  } else {
+    if(cards[firstGuess].value === cards[index].value) { //the cards match
+      alert('You have matched the cards!')
+    }else { //the cards don't match
+      alert('no match')
+    }
+  }
 })
 })
