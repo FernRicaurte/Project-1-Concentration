@@ -18,8 +18,8 @@ function shuffle(array) {
 let cards = [
     { value: '1', image: './images/diamonds_ace.svg' },
     { value: '2', image: './images/clubs_2.svg' },
-    { value: '1', image: './images/diamonds_ace' },
-    { value: '2', image: './images/clubs_2' },
+    { value: '1', image: './images/diamonds_ace.svg' },
+    { value: '2', image: './images/clubs_2.svg' },
     { value: '3', image: './images/clubs_3.svg' },
     { value: '4', image: './images/spades_4.svg' },
     { value: '3', image: './images/clubs_3.svg' },
@@ -39,6 +39,7 @@ shuffle(cards)
 cardEls.forEach(function(el, index) {
 el.addEventListener('click', function() {
   const clickedCard = cards[index]
+  el.setAttribute('src', clickedCard.image) // using the setAttribute method so that element being clicked on shows image.
     console.log(clickedCard);
 })
 })
