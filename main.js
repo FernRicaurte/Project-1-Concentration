@@ -31,8 +31,7 @@ const cards = [
 // we can select all of the ten card elements by using .querySelectorAll and storing it in a variable cardEls. The selector is .playingCards which all cards have.
 const cardEls = document.querySelectorAll('.playingcard')
 
-const guessOne = null
-
+let guessOne = null
 
 
 //this will shuffle the cards array, which contains its objects
@@ -48,14 +47,16 @@ cardEls.forEach(function (el, index) {
 
   if(guessOne === null) {
     guessOne = index
-    alert('Your first guess.')
   } else {
     if (cards[guessOne].value === cards[index].value) { 
-      //the cards match
-      alert('You have matched the cards!')
+      guessOne = null
     } else { 
-      //the cards don't match
-      alert('There is no match')
+      setTimeout(function () {
+    }, 1750)
+      cardEls[guessOne].setAttribute('src', './images/red.svg')
+      cardEls[index].setAttribute('src', './images/red.svg')
+      guessOne = null
+
     }
   }
 })
