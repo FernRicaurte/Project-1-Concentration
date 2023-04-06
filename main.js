@@ -15,7 +15,7 @@ function shuffle(array) {
 //my code for the game
 
 //make an array of card objects, did strings for value instead of numbers bc the kings/queens necessarily are not numbers.
-let cards = [
+const cards = [
     { value: '1', image: './images/diamonds_ace.svg' },
     { value: '2', image: './images/clubs_2.svg' },
     { value: '1', image: './images/diamonds_ace.svg' },
@@ -29,29 +29,33 @@ let cards = [
 ]
 
 // we can select all of the ten card elements by using .querySelectorAll and storing it in a variable cardEls. The selector is .playingCards which all cards have.
-const cardEls = document.querySelectorAll('.playingcard');
+const cardEls = document.querySelectorAll('.playingcard')
 
-const firstGuess = mull;
+const guessOne = null
 
 
 
 //this will shuffle the cards array, which contains its objects
-shuffle(cards);
+shuffle(cards)
 
 
 //adding an event listener for each of the ten cards in cardEls which is accessed with .querySelectorAll . the event listener is for a click on the cards.
-cardEls.forEach(function(el, index) {
-el.addEventListener('click', function() {
-  const clickedCard = cards[index];
-  el.setAttribute('src', clickedCard.image) //setAttribute method so facedown element being clicked on shows .image of card from array
+cardEls.forEach(function (el, index) {
+     el.addEventListener('click', function () {
+        let cardClicked = cards[index]
+  el.setAttribute('src', cardClicked.image) 
+  //setAttribute method so facedown element being clicked on shows .image of card from array
 
-  if(firstGuess === null){
-    firstGuess = index
+  if(guessOne === null) {
+    guessOne = index
+    alert('Your first guess.')
   } else {
-    if(cards[firstGuess].value === cards[index].value) { //the cards match
+    if (cards[guessOne].value === cards[index].value) { 
+      //the cards match
       alert('You have matched the cards!')
-    }else { //the cards don't match
-      alert('no match')
+    } else { 
+      //the cards don't match
+      alert('There is no match')
     }
   }
 })
