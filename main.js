@@ -33,67 +33,59 @@ let guesses = 0
 shuffle(cards)  
 
 
-cardEls.forEach(function (el, index) {
-     el.addEventListener('click', function () {
-      if (index === guessOne || cards[index].matched) { 
-        alert('invalid guess')
-        return
-      }
-
-     
-      let cardClicked = cards[index]
+  cardEls.forEach(function (el, index) {
+  el.addEventListener('click', function () {
+  if (index === guessOne || cards[index].matched) { 
+  alert('invalid guess')
+  return
+}
+   
+  let cardClicked = cards[index]
   el.setAttribute('src', cardClicked.image) 
   
   if(guessOne === null) {
-    guessOne = index
-  
+  guessOne = index
   } else {
-    guesses++
-    document.querySelector('#guesses').textContent = guesses
+  guesses++
+  document.querySelector('#guesses').textContent = guesses
 
-  
-    if (cards[guessOne].value === cards[index].value) { 
-      cards[guessOne].matched = true 
-      cards[index].matched = true 
-      guessOne = null 
-      cardsFlipped += 2 
+  if (cards[guessOne].value === cards[index].value) { 
+  cards[guessOne].matched = true 
+  cards[index].matched = true 
+  guessOne = null 
+  cardsFlipped += 2 
 
-      
-      if(cardsFlipped === cards.length) {
-        gameRestart()
-      }
+  if(cardsFlipped === cards.length) {
+  gameRestart()
+  }
 
-   
-    } else { 
-      setTimeout(function () {
-    }, 2000)
-      cardEls[guessOne].setAttribute('src', './images/red.svg') 
-      cardEls[index].setAttribute('src', './images/red.svg') 
-      guessOne = null 
-
+  } else { 
+  setTimeout(function () {
+  }, 2000)
+  cardEls[guessOne].setAttribute('src', './images/red.svg') 
+  cardEls[index].setAttribute('src', './images/red.svg') 
+  guessOne = null 
     }
   }
 })
 })
 
-
 function gameRestart() {
-  setTimeout(function() {
-  }, 2000)
-  guessOne = null 
-  cardsFlipped = 0
-  guesses = 0
-  document.querySelector('#guesses').textContent = guesses
-
-  cardEls.forEach(function (el, index) {
-    el.setAttribute('src', './images/red.svg')
-  })
-  cards.forEach(function(card, index) {
-    card.matched = false
-  })
-  shuffle(cards)
+setTimeout(function() {
+}, 2000)
+guessOne = null 
+cardsFlipped = 0
+guesses = 0
+document.querySelector('#guesses').textContent = guesses
+cardEls.forEach(function (el, index) {
+el.setAttribute('src', './images/red.svg')
+})
+cards.forEach(function(card, index) {
+card.matched = false
+})
+shuffle(cards)
 }
 
 document.querySelector('#restart').addEventListener('click', function() {
-  gameRestart()
+gameRestart()
 })
