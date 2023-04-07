@@ -34,3 +34,8 @@ Once the player has matched all cards, the game will automatically restart
 If player wants to reset before all cards are matched, player can click on the 'restart game' button.
 
 At the start of every new game, the cards will be shuffled to ensure randomness and the counter will be back to 0 
+
+
+
+
+<a href="https://fernricaurte.github.io/Project-1-Concentration/" target="_blank">GitHub Pages</a>
