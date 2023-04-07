@@ -39,3 +39,8 @@ At the start of every new game, the cards will be shuffled to ensure randomness 
 
 
 <a href="https://fernricaurte.github.io/Project-1-Concentration/" target="_blank">GitHub Pages</a>
+
+Technologies used:
+1.HTML
+2.CSS
+3.JS
